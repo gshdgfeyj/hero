@@ -1,4 +1,9 @@
-<h2>Detalhes de {{hero.name | uppercase}}</h2>
-<div><span>ID: </span>{{hero.id}}</div>
-<div><input [(ngModel)] = "hero.name"></div>
-p>
+<div>
+    <h2>Heróis Cadastrados</h2>
+    <ul class="heroes">
+        <li *ngFor = "let hero of heroes" (click) = "onSelect(hero)" [class.selected]="hero === selectedHero">
+            <span class="badge">{{hero.id}}: </span>{{hero.name}}
+        </li>
+    </ul>
+</div>
+<app-hero-detail [selectedHero] = "selectedHero"></app-hero-detail
